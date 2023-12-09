@@ -8,21 +8,20 @@ public class Diziler {
         String student;
         double Footballnote1, FootballfinalyNote2;//MATH LESSON
         double athleticsnote1, athleticsnote2;
-        double gymnasticsnote1, gymnasticsfinalynote2;
+        double gymnasticsvisaexam, gymnasticsfinalyexam;
         double Anatomynote1, Anatomyfinalynote2;
 
         System.out.println("Oxford University Vısa And Fınal  Grades System");
 
         System.out.print("Student's Name and Surname :");
         student = scan.nextLine();
-
         System.out.println("\nVİSA GRADES");
         System.out.print("Student's Football lesson visa grade:");
         Footballnote1 = scan.nextDouble();
         System.out.print("Student's athletics lesson visa grade:");
         athleticsnote1 = scan.nextDouble();
         System.out.print("Student's gymnastics lesson visa grade:");
-        gymnasticsnote1 = scan.nextDouble();
+        gymnasticsvisaexam = scan.nextDouble();
         System.out.print("Student's Human Anatomy and Kinesiology lesson visa grade:");
         Anatomynote1 = scan.nextDouble();
 
@@ -35,7 +34,7 @@ public class Diziler {
         System.out.print("Student's athletics final grade:");
         athleticsnote2 = scan.nextDouble();
         System.out.print("Student's gymnastics lesson finaly grade:");
-        gymnasticsfinalynote2 = scan.nextDouble();
+        gymnasticsfinalyexam = scan.nextDouble();
         System.out.print("Student's Human Anatomy and Kinesiology lesson visa grade:");
         Anatomyfinalynote2 = scan.nextDouble();
         System.out.println();
@@ -47,8 +46,8 @@ public class Diziler {
         double atletichfinaly = athleticsnote2 * 0.60;
         double atletichtotal = atletichvisa + atletichfinaly;
 
-        double gymnasticsvisa = gymnasticsnote1 * 0.40;
-        double gymnsaticsfinaly = gymnasticsfinalynote2 * 0.60;
+        double gymnasticsvisa = gymnasticsvisaexam * 0.40;
+        double gymnsaticsfinaly = gymnasticsfinalyexam * 0.60;
         double gymnastichtotal = gymnasticsvisa + gymnsaticsfinaly;
 
         double anatomyvisa = Anatomynote1 * 0.40;
@@ -56,13 +55,14 @@ public class Diziler {
         double anatomytotal = anatomyvisa + anatomyfinaly;
 
         // footbal lesson
-        String grade;
+        String grade =null;
         if (footbaltotal >= 89) {
             System.out.println("you passed the footbal lesson..");
             grade = "AA";
         } else if (footbaltotal > 85) {
             System.out.println("you passed the footbal lesson..");
             grade = "BA";
+            System.out.println(grade);
         } else if (footbaltotal > 79) {
             System.out.println("you passed the footbal lesson..");
             grade = "BB";
@@ -85,7 +85,7 @@ public class Diziler {
 // GRADE KISMINDA HATA ALMA
         System.out.println("Student's Name and Surname :" + student);
         System.out.println("Student's grade footbal total :" + footbaltotal);
-        System.out.println("Student's grade level :");
+        System.out.println("Student's grade level :"+grade);
         System.out.println();
         //athletich grades
         if (atletichtotal >= 89) {
@@ -116,7 +116,7 @@ public class Diziler {
 // GRADE KISMINDA HATA ALMA
         System.out.println("Student's Name and Surname :" + student);
         System.out.println("Student's grade athletics total :" + atletichtotal);
-        System.out.println("Student's grade level :");
+        System.out.println("Student's grade level :"+grade);
         System.out.println();
         //gymnsatics grades
 
@@ -148,7 +148,7 @@ public class Diziler {
 
         System.out.println("Student's Name and Surname :" + student);
         System.out.println("Student's grade gymnastics total :" + gymnastichtotal);
-        System.out.println("Student's grade level :");
+        System.out.println("Student's grade level :"+grade);
         System.out.println();
 
 
@@ -181,16 +181,16 @@ public class Diziler {
 
         System.out.println("Student's Name and Surname :" + student);
         System.out.println("Student's grade anatomy total ::" + anatomytotal);
-        System.out.println("Student's grade level :");
+        System.out.println("Student's grade level :"+grade);
         System.out.println();
 
         String select;
         double footballbut;
             select=scan.nextLine();
-        if (footbaltotal<49){
-            System.out.println("Would you like to take the footbal make-up exam?");
+        if (footbaltotal<89){
+            System.out.println("Did I take the student football make-up exam?");
             System.out.print("Select YES 'Y - NO 'N'  :");
-            select=scan.nextLine();
+            select=scan.nextLine();}
 
             if (select.equalsIgnoreCase("y")){
                 System.out.print("Butexam note :");
@@ -198,7 +198,7 @@ public class Diziler {
 
                 double footbalbut =footballbut*0.60;
                 double footbalbut1=footbalvisa1+footbalbut;
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 if (footbalbut1 >= 89) {
                     System.out.println("you passed the footbal lesson..");
                     grade = "AA";
@@ -227,22 +227,22 @@ public class Diziler {
 // GRADE KISMINDA HATA ALMA
                 System.out.println("Student's Name and Surname :" + student);
                 System.out.println("Student's grade footbal total :" + footbalbut1);
-                System.out.println("Student's grade level :");
+                System.out.println("Student's grade level :"+grade);
                 System.out.println();
-
+            // buradaki kod parçasını sor !
             } else if (select.equalsIgnoreCase("N")) {
                 System.out.println("Student's Name and Surname :" + student);
                 System.out.println("Student's grade footbal total :" + footbaltotal);
-                System.out.println("Student's grade level :");
+                System.out.println("Student's grade level :"+grade);
                 System.out.println();
 
             }
             double athleticbut;
-            select=scan.nextLine();
-            if (atletichtotal<49){
-                System.out.println("Would you like to take the athletic make-up exam?");
+           select=scan.nextLine();
+            if (atletichtotal<89){
+                System.out.println("Did I take the student athletic make-up exam???");
                 System.out.print("Select YES 'Y - NO 'N'  :");
-                select=scan.nextLine();
+                select=scan.nextLine();}
 
                 if (select.equalsIgnoreCase("y")){
                     System.out.print("Butexam note :");
@@ -250,77 +250,158 @@ public class Diziler {
 
                     double athleticbut0 =athleticbut*0.60;
                     double athleticbut1=atletichvisa+athleticbut0;
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     if (athleticbut1 >= 89) {
-                        System.out.println("you passed the footbal lesson..");
+                        System.out.println("you passed the athletic lesson..");
                         grade = "AA";
                     } else if (athleticbut1 > 85) {
-                        System.out.println("you passed the footbal lesson..");
+                        System.out.println("you passed the athletic lesson..");
                         grade = "BA";
                     } else if (athleticbut1 > 79) {
-                        System.out.println("you passed the footbal lesson..");
+                        System.out.println("you passed the athletic lesson..");
                         grade = "BB";
                     } else if (athleticbut1 > 74) {
-                        System.out.println("you passed the footbal lesson..");
+                        System.out.println("you passed the athletic lesson..");
                         grade = "BC";
                     } else if (athleticbut1 > 69) {
-                        System.out.println("you passed the footbal lesson..");
+                        System.out.println("you passed the athletic lesson..");
                         grade = "CC";
                     } else if (athleticbut1  > 60) {
-                        System.out.println("you passed the footbal lesson..");
+                        System.out.println("you passed the athletic lesson..");
                         grade = "DC";
                     } else if (athleticbut1 >= 49) {
-                        System.out.println("you passed the footbal lesson..");
+                        System.out.println("you passed the athletic lesson..");
                         grade = "DD";
-                        System.out.println("You have conditionally passed the lesson footbal!!");
+                        System.out.println("You have conditionally passed the lesson athletic!!");
                     } else if (athleticbut1  < 49) {
-                        System.out.println("You failed the football lesson.");
+                        System.out.println("You failed the atletic lesson.");
                     }
 // GRADE KISMINDA HATA ALMA
                     System.out.println("Student's Name and Surname :" + student);
-                    System.out.println("Student's grade footbal total :" + athleticbut1 );
-                    System.out.println("Student's grade level :");
+                    System.out.println("Student's grade athletic total :" + athleticbut1 );
+                    System.out.println("Student's grade level :"+grade);
                     System.out.println();
 
                 } else if (select.equalsIgnoreCase("N")) {
                     System.out.println("Student's Name and Surname :" + student);
-                    System.out.println("Student's grade footbal total :" + atletichtotal);
+                    System.out.println("Student's grade athletic total :" + atletichtotal);
                     System.out.println("Student's grade level :");
                     System.out.println();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 }
+                double gymnsaticbut;
+                 select=scan.nextLine();
+                if (gymnastichtotal<89){
+                    System.out.println("Did I take the student gymnastic  make-up exam?");
+                    System.out.print("Select YES 'Y - NO 'N'  :");
+                    select=scan.nextLine();}
+
+                    if (select.equalsIgnoreCase("y")){
+                        System.out.print("Butexam note :");
+                      gymnsaticbut =scan.nextDouble();
+
+                        double gymnasticbut0=gymnsaticbut*0.60;
+                        double gymnsaticbut1=gymnasticsvisa+gymnasticbut0;
+
+                        if (gymnsaticbut1 >= 89) {
+                            System.out.println("you passed the gymnsatic lesson..");
+                            grade = "AA";
+                        } else if (gymnsaticbut1 > 85) {
+                            System.out.println("you passed the gymnsatic lesson..");
+                            grade = "BA";
+                        } else if (gymnsaticbut1  > 79) {
+                            System.out.println("you passed the gymnsatic lesson..");
+                            grade = "BB";
+                        } else if (gymnsaticbut1  > 74) {
+                            System.out.println("you passed the gymnsatic lesson..");
+                            grade = "BC";
+                        } else if (gymnsaticbut1 > 69) {
+                            System.out.println("you passed the gymnsatic lesson..");
+                            grade = "CC";
+                        } else if (gymnsaticbut1  > 60) {
+                            System.out.println("you passed the gymnsatic lesson..");
+                            grade = "DC";
+                        } else if (gymnsaticbut1 >= 49) {
+                            System.out.println("you passed the gymnsatic lesson..");
+                            grade = "DD";
+                            System.out.println("You have conditionally passed the lesson gymnsatic!!");
+                        } else if (gymnsaticbut1 < 49) {
+                            System.out.println("You failed the gymnsatic lesson.");
+                        }
+// GRADE KISMINDA HATA ALMA
+                        System.out.println("Student's Name and Surname :" + student);
+                        System.out.println("Student's grade gymnastic total :" +gymnsaticbut1 );
+                        System.out.println("Student's grade level :"+grade);
+                        System.out.println();
+
+                    } else if (select.equalsIgnoreCase("N")) {
+                        System.out.println("Student's Name and Surname :" + student);
+                        System.out.println("Student's grade gymnsatic total :" + gymnastichtotal);
+                        System.out.println("Student's grade level :"+grade);
+                        System.out.println();
+                    }
+
+                    double anotomybut;
+                    select=scan.nextLine();
+                    if (anatomytotal<89){
+                        System.out.println("Did I take the student anatomy make-up exam?");
+                        System.out.print("Select YES 'Y - NO 'N'  :");
+                        select=scan.nextLine();}
+
+                        if (select.equalsIgnoreCase("y")){
+                            System.out.print("Butexam note :");
+                          anotomybut =scan.nextDouble();
+
+                            double anatomybut0=anotomybut*0.60;
+                            double anatomybut1=anatomyvisa+anatomybut0;
+
+                            if (anatomybut1 >= 89) {
+                                System.out.println("you passed the anatomy lesson..");
+                                grade = "AA";
+                            } else if (anatomybut1 > 85) {
+                                System.out.println("you passed the anatomy lesson..");
+                                grade = "BA";
+                            } else if (anatomybut1  > 79) {
+                                System.out.println("you passed the anatomy lesson..");
+                                grade = "BB";
+                            } else if (anatomybut1  > 74) {
+                                System.out.println("you passed the anatomy lesson..");
+                                grade = "BC";
+                            } else if (anatomybut1 > 69) {
+                                System.out.println("you passed the anatomy lesson..");
+                                grade = "CC";
+                            } else if (anatomybut1  > 60) {
+                                System.out.println("you passed the anatomy lesson..");
+                                grade = "DC";
+                            } else if (anatomybut1 >= 49) {
+                                System.out.println("you passed the anatomy lesson..");
+                                grade = "DD";
+                                System.out.println("You have conditionally passed the lesson anatomy!!");
+                            } else if (anatomybut1 < 49) {
+                                System.out.println("You failed the anatomy lesson.");
+                            }
+
+                            System.out.println("Student's Name and Surname :" + student);
+                            System.out.println("Student's grade anatomy total :" +anatomybut1 );
+                            System.out.println("Student's grade level :"+grade);
+                            System.out.println();
+
+                        } else if (select.equalsIgnoreCase("N")) {
+                            System.out.println("Student's Name and Surname :" + student);
+                            System.out.println("Student's grade anatomy total :" + anatomytotal);
+                            System.out.println("Student's grade level :"+grade);
+                            System.out.println();
+
+                    }
+
+    }}
 
 
 
 
 
 
-
-
-
-            }
-        }}}
 
 
 
